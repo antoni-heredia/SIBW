@@ -1,0 +1,11 @@
+{% extends "padre.html" %}
+{%block central%}
+<section class="seccion">
+        {% for evento in eventos %}
+        <div class="evento">
+                <img class="logo_evento" src="{{ evento['img'] }}"/>
+                <a class="enlaces" href="./evento.php?ev={{ evento['id'] }}">{{ evento['nombre'] }}</a>
+        </div>
+        {% endfor %}
+</section>
+{% endblock %}

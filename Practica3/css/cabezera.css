@@ -89,6 +89,7 @@ img {
     flex-wrap: wrap;
     position: relative;
     text-align: center;
+    
 }
 
 .seccion_evento {
@@ -114,6 +115,8 @@ img {
 }
 
 .evento {
+    width: 25%;
+    height: auto;
     margin: 10px 5px;
     background-color: grey;
     border: solid 1px red;
@@ -122,6 +125,8 @@ img {
 
 .enlaces {
     margin: 0 auto;
+    position: relative;;
+    bottom: 10px;
     color: black;
     display: block;
 }
@@ -132,7 +137,7 @@ img {
 }
 
 .logo_evento {
-    height: 90%;
+    height: auto;
 }
 
 .social_button {
