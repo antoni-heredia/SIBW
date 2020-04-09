@@ -32,3 +32,26 @@ function aniadirComentario() {
     }
 
 }
+
+function comprobarComentario() {
+    comentario = document.getElementById("comentario").value;
+    palabras = comentario.split(" ");
+    lista = document.getElementById("listaprohibidas").innerHTML;
+    lista = lista.split(";")
+    texto_sin_palabrotas = ""
+    for (x in palabras)
+        if (palabras[x] != "") {
+            esPalabrota = false
+            for (y in lista) {
+                if (palabras[x] == lista[y]) {
+                    esPalabrota = true;
+                    for(l = 0; l < palabras[x].length; l++)
+                        texto_sin_palabrotas += "*"
+                    texto_sin_palabrotas += " "
+                    document.getElementById("comentario").value = texto_sin_palabrotas
+                }
+            }
+            if (!esPalabrota)
+                texto_sin_palabrotas += palabras[x] + " "
+        }
+}

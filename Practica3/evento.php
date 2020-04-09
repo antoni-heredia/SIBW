@@ -18,6 +18,7 @@ $descripcion =  explode(PHP_EOL, $evento['descripcion']);
 $img = explode(":", $evento['img']);
 
 $comentarios = getComentarios($mysqli);
-
-echo $twig->render("evento.html", ['evento' => $evento, 'descripcion' => $descripcion, 'img'=>$img, 'comentarios'=>$comentarios]);
+$palabras = getPalabrasProhibidas($mysqli);
+echo $twig->render("evento.html", ['evento' => $evento,'descripcion' => $descripcion, '
+                    img'=>$img, 'comentarios'=>$comentarios, 'palabras'=>$palabras]);
 ?>

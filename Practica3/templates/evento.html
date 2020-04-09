@@ -1,29 +1,33 @@
 {% extends "padre.html" %}
 {%block central%}
-        <section class="seccion_evento">
-            <div class="imagenes_evento">
-                {% for im in img %}
-                <img src={{im}} />
-                {% endfor %}
+<section class="seccion_evento">
+    <div class="imagenes_evento">
+        {% for im in img %}
+        <img src={{im}} />
+        {% endfor %}
 
-            </div>
-            <p class="titulo_evento">Nombre del evento:  {{evento['nombre']}}</p>
-            <p class="organizador_evento">Organizados: {{evento['organizador']}}</p>
-            <p class="fecha_evento">Fecha:  {{evento['fecha']}}</p>
-
-            {% for bloque in descripcion %}
-            <p>{{ bloque }}</p>
-            {% endfor %}
-            <a href="https://twitter.com"><img class="social_button" src="img/twitter.svg" />
-                <a href="https://facebook.com"><img class="social_button" src="img/facebook.svg" />
-                    <a href="./impresion.html"><img class="social_button" src="img/impresion.svg" />
-        </section></a>
-        </section>
     </div>
-    <button onclick="mostrarComentarios()" class="botton_comentarios">Comentarios</button>
+    <p class="titulo_evento">Nombre del evento: {{evento['nombre']}}</p>
+    <p class="organizador_evento">Organizados: {{evento['organizador']}}</p>
+    <p class="fecha_evento">Fecha: {{evento['fecha']}}</p>
 
-    <aside id="seccion_comentarios" class="seccion_comentarios">
+    {% for bloque in descripcion %}
+    <p>{{ bloque }}</p>
+    {% endfor %}
+    <a href="https://twitter.com"><img class="social_button" src="img/twitter.svg" />
+        <a href="https://facebook.com"><img class="social_button" src="img/facebook.svg" />
+            <a href="./impresion.html"><img class="social_button" src="img/impresion.svg" />
+</section></a>
+</section>
+</div>
+<button onclick="mostrarComentarios()" class="botton_comentarios">Comentarios</button>
 
+<aside id="seccion_comentarios" class="seccion_comentarios">
+    <div style="display:none;" id="listaprohibidas">
+        {% for palabra in palabras %}
+        {{palabra['palabra']}};
+        {% endfor %}
+    </div>
         <div id="comentarios">
             {% for comentario in comentarios %}
             <div class="comentario">
@@ -34,17 +38,17 @@
                 <div class="texto-comentario">{{comentario['comentario']}}</div>
             </div>
             {% endfor %}
-            
+
         </div>
 
         <div class="formulario">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" class="texto" name="nombre" value="">
             <label for="email">Email:</label>
-            <input type="email" id="email" class="texto"name="email" value="">
+            <input type="email" id="email" class="texto" name="email" value="">
             <label for="comentario">Comentario:</label>
-            <input type="text" class="texto-largo"id="comentario" name="comentario" value=""><br>
-            <input type="submit" onclick="aniadirComentario()" value="Enviar"/>
+            <input type="text" class="texto-largo" id="comentario"  onkeyup="comprobarComentario()" name="comentario" value=""><br>
+            <input type="submit" onclick="aniadirComentario()" value="Enviar" />
         </div>
-    </aside>
+</aside>
 {% endblock %}

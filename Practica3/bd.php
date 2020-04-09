@@ -85,4 +85,26 @@
         }
         return $comentarios;
     }
-?>
+
+    function getPalabrasProhibidas($mysqli){
+
+        if (!$sentencia = $mysqli->prepare("SELECT palabra FROM palabrasprohibidas")) {
+            echo "Falló la preparación: (" . $mysqli->errno . ") " . $mysqli->error;
+        }
+
+       
+        if (!$sentencia->execute()) {
+            echo "Falló la ejecución: (" . $sentencia->errno . ") " . $sentencia->error;
+        }
+
+        if (!($res = $sentencia->get_result())) {
+            echo "Falló la obtención del conjunto de resultados: (" . $sentencia->errno . ") " . $sentencia->error;
+        }
+       
+        $palabras = array();
+        while ($fila = $res->fetch_assoc()) {
+            $palabra = array('palabra'=>$fila['palabra']);
+            array_push($palabras, $palabra);
+        }
+        return $palabras;
+    }
