@@ -1,0 +1,22 @@
+{% extends "padre.html" %}
+{%block central%}
+<section class="seccion">
+    <form method="POST" name="contra">
+        <label for="nick">Nick:</label><br>
+        <input type="text" id="nick" name="nick" required/><br>
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname" required/><br>
+        <label for="lname">Apellido:</label><br>
+        <input type="text" id="lname" name="lname" required/><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required/><br>
+        <label for="pass1">Intruduzca la contraseña:</label><br>
+        <input type="pass" id="pass1" name="pass1" required/><br>
+        <label for="pass2">Vuelva a introducir la contraseña</label><br>
+        <input type="pass" id="pass2"><br>
+        <button class="boton" onclick="return comprobarClave2()" >Crear cuenta</button>
+    </form>
+
+</section>
+
+{% endblock %}

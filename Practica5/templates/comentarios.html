@@ -1,0 +1,29 @@
+<div id="comentarios" class="comentarios-admin">
+    <h1>Comentarios</h1>
+    {% for comentario in comentarios %}
+    <div class="comentario">
+        {% if tipo_usuario == 0 or tipo_usuario == 2 %}
+        <form action="eliminarComentario_admin.php" method="post">
+            <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+            <input id="idComentario" name="idComentario" type="hidden" value="{{comentario['id']}}">
+            <input type="image" src="img/simbolo-x.svg" class="edicion-comentario" alt="Eliminar comentario" height="10"
+                width="10" />
+        </form>
+        <form action="editarComentario_admin.php" method="GET">
+            <input id="id_comentario" name="id_comentario" type="hidden" value="{{comentario['id']}}">
+            <input type="image" src="img/pluma.svg" class="edicion-comentario" alt="Editar comentario comentario" />
+        </form>
+        {% endif %}
+        <div>
+            <div class="nombre-comentario">Autor: {{comentario['autor']}}</div></br>
+            <div class="fecha-comentario">Fecha: {{comentario['fecha']}}</div>
+        </div>
+        </br>
+        <div>
+            <div class="nombre-comentario">Comentario</div></br>
+            <div class="texto-comentario">{{comentario['comentario']}}</div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block titulo %}Pagina principal{% endblock %}</title>
+    <link href="css/cabezera.css" rel="stylesheet" type="text/css" />
+    <script src="js/funciones.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset = "UTF-8" />
+
+</head>
+
+<body>
+    <header class="bloque_contenedor">
+        <img class="logo_cabecera" src="img/logo.png" />
+        <div class="menu">
+            <div>
+                <h1 class="titulo_cabecera">Gestión de eventos</h1>
+            </div>
+            <nav class="topnav">
+                <a href="index.php">Pagina principal</a>
+                <a class="espacio_izquierda" href="administracion.php">Administración</a>
+                <a class="espacio_izquierda" href="nuevoEvento.php">Crear evento</a>
+                <a class="espacio_izquierda" href="exit.php">Logout</a>
+                <a class="espacio_izquierda" href="buscador.php">Buscar eventos</a>
+
+               
+            </nav>
+        </div>
+    </header>
+    <div class="contenido">
+        <aside class="lateral">
+            <p>Webs recomendadas</p>
+            <a class="enlaces" href="https://google.com">Pagina 1</a>
+            <a class="enlaces" href="https://google.com">Pagina 2</a>
+            <a class="enlaces" href="https://google.com">Pagina 3</a>
+
+        </aside>
+        <section class="seccion">
+            {% block central %}
+            <p>bloque del centro</p>
+            {% endblock %}
+        </section>
+        </section>
+    </div>
+
+    <footer class="pie">
+        contenido del pie
+    </footer>
+</body>
+
+</html>

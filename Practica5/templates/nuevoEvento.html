@@ -1,0 +1,22 @@
+{% extends "padre.html" %}
+{%block central%}
+<form enctype="multipart/form-data" class="formulario" action="subirEvento.php" method="POST" >
+    <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']|default(-1)}}">
+    <label for="nombre">Nombre:</label>
+    <input type="text" class="texto-largo" id="nombre" name="nombre" value="{{evento['nombre']}}">
+    <label for="organizador">Organizador:</label>
+    <input type="text" class="texto-largo" id="organizador" name="organizador" value="{{evento['organizador']}}">
+    <label for="etiquetas">Etiquetas:</label>
+    <input type="text" class="texto-largo" id="etiquetas" name="etiquetas" value="{{evento['etiquetas']}}">
+    <label for="fecha">Fecha:</label>
+    <input type="date" class="texto-largo" id="fecha" name="fecha" value="{{evento['fecha']}}">
+    <label for="fotos">Fotos:</label>
+    <input type="file" multiple class="texto-largo" id="fotos" name="fotos[]" value="{{evento['fotos']}}">
+    <label for="publicado">Publicado:</label>
+    <input type="checkbox"  class="texto-largo" id="publicado" name="publicado" {% if evento['publicado'] == 0 %} checked {% endif %}>
+
+    <label for="descripcion">Descripcion:</label>
+    <textarea name="descripcion" id="descripcion" class="texto-largo" cols="40" rows="5">{{evento['descripcion']}}</textarea>
+    <input type="submit" class="boton" onclick="aniadirComentario()" value="Enviar" />
+</form>
+{% endblock %}

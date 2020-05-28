@@ -1,0 +1,12 @@
+    <form method="POST">
+        <label for="nick">Nick:</label><br>
+        <input type="text" id="nick" name="nick" value="{{usuario['nickname']}}" required /><br>
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname" value="{{usuario['nombre']}}" required/><br>
+        <label for="lname">Apellido:</label><br>
+        <input type="text" id="lname" name="lname" value="{{usuario['apellido']}}" required/><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{usuario['email']}}" required/>
+        <input  class="boton" type="submit" value="Actualizar datos">
+    </form>
+    {% include 'cambiocontraseña.html' %}

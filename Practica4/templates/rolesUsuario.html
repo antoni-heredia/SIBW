@@ -1,0 +1,17 @@
+{% for usr in usuarios %}
+<form method="POST" action="cambiarDatosUsuario.php">
+    <label for="id">Id:</label><br>
+    <input type="text" id="id" name="id" readonly="readonly" value="{{usr['id']}}"><br>
+    <label for="nick">Nick:</label><br>
+    <input type="text" id="nick" name="nick" value="{{usr['nickname']}}"><br>
+    <label for="fname">Nombre:</label><br>
+    <input type="text" id="fname" name="fname" value="{{usr['nombre']}}"><br>
+    <label for="lname">Apellido:</label><br>
+    <input type="text" id="lname" name="lname" value="{{usr['apellido']}}"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" value="{{usr['email']}}"><br>
+    <label for="tipo">Tipo:</label><br>
+    <input type="text" id="tipo" name="tipo" value="{{usr['tipo']}}">
+    <input class="boton" type="submit" value="Actualizar datos">
+</form>
+{% endfor %}

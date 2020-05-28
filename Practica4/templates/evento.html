@@ -1,0 +1,84 @@
+{% extends "padre.html" %}
+{%block central%}
+<section class="seccion_evento">
+    <div class="imagenes_evento">
+        {% if tipo_usuario == 0 or tipo_usuario == 2 %}
+        <form action="eliminarEvento.php" method="post">
+            <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+            <input type="image" src="img/simbolo-x.svg" class="edicion-comentario" alt="Eliminar evento" height="20"
+                width="20" />
+        </form>
+        <form action="editarEvento.php" method="GET">
+            <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+            <input type="image" src="img/pluma.svg" class="edicion-comentario" alt="Editar evento" />
+        </form>
+        {% endif %}
+        {% for im in img %}
+        <img src={{im}} />
+        {% endfor %}
+    </div>
+    <p class="titulo_evento">Nombre del evento: {{evento['nombre']}}</p>
+    <p class="organizador_evento">Organizados: {{evento['organizador']}}</p>
+    <p class="fecha_evento">Fecha: {{evento['fecha']}}</p>
+
+    {% for bloque in descripcion %}
+    <p>{{ bloque }}</p>
+    {% endfor %}
+    <a href="https://twitter.com"><img class="social_button" src="img/twitter.svg" />
+        <a href="https://facebook.com"><img class="social_button" src="img/facebook.svg" />
+            <a href="./impresion.html"><img class="social_button" src="img/impresion.svg" />
+</section></a>
+</section>
+</div>
+<button onclick="mostrarComentarios()" class="botton_comentarios">Comentarios</button>
+
+<aside id="seccion_comentarios" class="seccion_comentarios">
+    <div style="display:none;" id="listaprohibidas">
+        {% for palabra in palabras %}
+        {{palabra['palabra']}};
+        {% endfor %}
+    </div>
+    <div id="comentarios">
+        {% for comentario in comentarios %}
+        <div class="comentario">
+            {% if tipo_usuario == 0 or tipo_usuario == 2 %}
+            <form action="eliminarComentario.php" method="post">
+                <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+                <input id="idComentario" name="idComentario" type="hidden" value="{{comentario['id']}}">
+                <input type="image" class="edicion-comentario" src="img/simbolo-x.svg" alt="Eliminar comentario"
+                    height="10" width="10" />
+            </form>
+            <form action="editarComentario.php" method="GET">
+                <input id="id_comentario" name="idComentario" type="hidden" value="{{comentario['id']}}">
+                <input type="image" class="edicion-comentario" src="img/pluma.svg" alt="Editar comentario comentario"
+                    height="10" width="10" />
+            </form>
+            {% endif %}
+            <div>
+                <div class="nombre-comentario">Autor: {{comentario['autor']}}</div></br>
+                <div class="fecha-comentario">Fecha: {{comentario['fecha']}}</div>
+            </div>
+            </br>
+
+            <div>
+                <div class="nombre-comentario">Comentario:</div></br>
+                <div class="texto-comentario">{{comentario['comentario']}}</div>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+    {% if tipo_usuario != -1 %}
+    <form class="formulario" action="subirComentario.php" method="post">
+        <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+        <label for="comentario">Comentario:</label>
+        <input type="text" class="texto-largo" id="comentario" name="comentario" onkeyup="comprobarComentario()"
+            name="comentario" value=""><br>
+        <input type="submit" class="boton" onclick="aniadirComentario()" value="Enviar" />
+    </form>
+    {% endif %}
+
+</aside>
+{% endblock %}

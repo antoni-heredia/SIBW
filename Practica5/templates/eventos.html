@@ -1,0 +1,35 @@
+<div id="comentarios" class="comentarios-admin">
+    <h1>Eventos</h1>
+    <form >
+        <input id="buscador" name="buscador" type="text"">
+        <input  type="submit" value="Buscar">
+    </form>
+    {% for evento in eventos %}
+    <div class="comentario">
+        {% if tipo_usuario == 0 or tipo_usuario == 2 %}
+        <form action="eliminarEvento.php" method="post">
+            <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+            <input type="image" src="img/simbolo-x.svg" class="edicion-comentario" alt="Eliminar evento" height="10"
+                width="10" />
+        </form>
+        <form action="editarEvento.php" method="GET">
+            <input id="idEvento" name="idEvento" type="hidden" value="{{evento['id']}}">
+            <input type="image" src="img/pluma.svg" class="edicion-comentario" alt="Editar evento" />
+        </form>
+        {% endif %}
+
+        <div>
+            <div class="nombre-comentario">Evento: {{evento['nombre']}}</div></br>
+            <div class="fecha-comentario">Fecha: {{evento['fecha']}}</div>
+        </div>
+        </br>
+        <div>
+            <div class="nombre-comentario">Id: </div>
+            <div class="nombre-comentario">{{evento['id']}}</div>
+        </div>
+        </br>
+    </div>
+    {% endfor %}
+    <input type="button" onclick="location.href='nuevoEvento.php';" value="Crear nuevo evento" />
+
+</div>

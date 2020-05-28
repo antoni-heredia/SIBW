@@ -1,0 +1,7 @@
+{% extends "padre.html" %}
+{%block central%}
+<form>
+    <input type="text" placeholder="Introduzca su busqueda" size="30" onkeyup="verResultados(this.value)">
+    <div  id="resultados"></div>           
+</form>
+{% endblock %}

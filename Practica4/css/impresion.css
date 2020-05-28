@@ -1,0 +1,131 @@
+.logo_cabecera {
+    width: auto;
+    height: auto;
+    display:block;
+    margin:auto;
+}
+
+body {
+    margin: 0;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bloque_contenedor {
+    visibility: unset;
+    width: 100%;
+    height: 5vw;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.titulo_cabecera {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    font-size: 3vw;
+    margin: auto;
+    display: block;
+}
+
+.topnav {
+    visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    max-height: 40%;
+    bottom: 0;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.5% 0.5%;
+    text-decoration: none;
+    font-size: 1.2vw;
+    border-bottom: 3px solid transparent;
+}
+
+.menu {
+    position: absolute;
+    height: 100%;
+    display: block;
+
+}
+
+.espacio_izquierda {
+    margin-left: 5%;
+}
+
+.contenido {
+    overflow: hidden;
+}
+
+.lateral {
+    visibility: hidden;
+    width: 0%;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 0;
+    
+}
+
+.seccion {
+    width: 90%;
+    display: inline-block;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+}
+
+.seccion_evento {
+    width: 90%;
+    height: 100%;
+    display: inline-block;
+
+
+}
+.pie {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.evento {
+    margin: 10px 5px;
+    width: 25vw;
+    height: 25vw;
+    
+}
+.enlaces{
+    margin: 0 auto;
+    color: black;
+    display: block;
+}
+
+.imagenes_evento{
+    float: right;
+    width: 10%;
+}
+.logo_evento{
+    height: 90%;
+}
+.social_button{
+    width: 3%;
+    visibility: hidden;
+}

@@ -1,0 +1,10 @@
+{% extends "padre.html" %}
+{%block central%}
+<form class="formulario"  method="post">
+    <input id="id_comentario" name="id_comentario" type="hidden" value="{{id_comentario}}">
+    <label for="comentario">Comentario:</label>
+    <input type="text" class="texto-largo" id="comentario" name="comentario" onkeyup="comprobarComentario()"
+        name="comentario" value="{{comentario}}">
+    <input type="submit" class="boton" onclick="aniadirComentario()" value="Enviar" />
+</form>
+{% endblock %}

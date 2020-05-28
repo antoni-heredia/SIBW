@@ -1,0 +1,224 @@
+.logo_cabecera {
+    height: auto;
+    width: 5%;
+    display: table;
+    float: left;
+}
+
+body {
+    margin: 0;
+    flex-direction: column;
+}
+
+.bloque_contenedor {
+    width: 100%;
+    height: 5vw;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.titulo_cabecera {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    font-size: 3vw;
+    margin: 0;
+    max-height: 20vw;
+}
+
+.topnav {
+    background-color: rgb(141, 140, 140);
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    max-height: 40%;
+    bottom: 0;
+}
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.5% 0.5%;
+    text-decoration: none;
+    font-size: 1.2vw;
+    border-bottom: 3px solid transparent;
+}
+
+.menu {
+    position: relative;
+    height: 100%;
+    float: left;
+    background-color: lightseagreen;
+    width: 95%;
+}
+
+.espacio_izquierda {
+    margin-left: 5%;
+}
+
+.contenido {
+    bottom: 0;
+}
+
+.lateral {
+    width: 10%;
+    background-color: darkorchid;
+    top: 0px;
+    left: 0px;
+    float: left;
+    margin-bottom: 0;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+.seccion {
+    width: 90%;
+    background-color: fuchsia;
+    display: inline-block;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    
+}
+
+.seccion_evento {
+    width: 90%;
+    max-height: 90%;
+    background-color: fuchsia;
+    display: inline-block;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    flex: 1;
+    font-size: x-large;
+}
+
+.pie {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.evento {
+    width: 25%;
+    height: auto;
+    margin: 10px 5px;
+    background-color: grey;
+    border: solid 1px red;
+    float: left;
+}
+
+.enlaces {
+    margin: 0 auto;
+    position: relative;;
+    bottom: 10px;
+    color: black;
+    display: block;
+}
+
+.imagenes_evento {
+    float: right;
+    width: 10%;
+}
+
+.logo_evento {
+    height: auto;
+}
+
+.social_button {
+    width: 3%;
+}
+.texto {
+    width: 43%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .texto-largo{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .boton {
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+
+  }
+.seccion_comentarios {
+    z-index: 1;
+    position: fixed;
+    width: 80vw;
+    right: 10vw;
+    bottom: 5vh;
+    background-color: #f2f2f2;
+    color: brown;
+    padding: 0;
+    display: none;
+}
+.botton_comentarios{
+    z-index: 1;
+    position: fixed;
+    right: 5vw;
+    bottom: 1vh;
+    background-color: dimgrey;
+    color: white;
+    padding: 0;
+    border-radius: 4%;
+
+}
+.nombre-comentario{
+    float: left;
+    
+}
+.fecha-comentario{
+    float: left;
+}
+.texto-comentario{
+    clear:both;
+}
+.formulario{
+ background-color: beige;
+ color: black;
+}
+
+.cuadro-login{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+.input-login{
+    clear:both;
+}
+.edicion-comentario{
+    height:15px;
+    width:15px;
+    float: right;
+}
+.comentario{
+    background-color: burlywood;
+    border: 1px solid black;
+}
+.comentarios-admin{
+    clear:both;
+    width: 100vw;
+    2}

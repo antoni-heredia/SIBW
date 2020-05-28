@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+{%block central%}
+<section class="seccion">
+    <div class="cuadro-lgoin">
+        <form action="login.php" method="post">
+            Nick: <input class="input-login" type="text" name="nick" />
+            Password: <input class="input-login" type="password" name="contraseña" />
+            <input type="submit" value="Loguearse" />
+          </form>
+    </div>
+    <button onclick="location.href = 'registrarse.php';" >Registrarse</button>
+
+</section>
+{% endblock %}
