@@ -545,7 +545,7 @@ function nuevoEvento($nombre, $organizador, $etiquetas, $fecha, $descripcion, $i
     }
 
 
-    if (!$sentencia->bind_param("sssssi",$nombre, $organizador, $etiquetas, $fecha, $descripcion, $imagenes,$publicado )) {
+    if (!$sentencia->bind_param("sssssii",$nombre, $organizador, $etiquetas, $fecha, $descripcion, $imagenes,$publicado )) {
         echo "Falló la vinculación de parámetros: (" . $sentencia->errno . ") " . $sentencia->error;
     }
 
